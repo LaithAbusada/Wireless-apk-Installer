@@ -40,6 +40,7 @@ namespace bulk_apk_installer
             this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxPort = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // listView1
@@ -160,12 +161,23 @@ namespace bulk_apk_installer
             this.textBoxPort.Size = new System.Drawing.Size(59, 22);
             this.textBoxPort.TabIndex = 2;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(372, 293);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(95, 20);
+            this.checkBox1.TabIndex = 13;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(505, 731);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.textBoxPort);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.materialMultiLineTextBox1);
@@ -205,6 +217,7 @@ namespace bulk_apk_installer
         private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
         private Label label3;
         private TextBox textBoxPort;
+        private CheckBox checkBox1;
     }
 }
 

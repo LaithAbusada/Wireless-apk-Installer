@@ -111,6 +111,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Downloads\adb.exe" />
+    <Content Include="Downloads\AdbWinApi.dll" />
+    <Content Include="Downloads\AdbWinUsbApi.dll" />
     <Content Include="ext_apk_filetype_icon_176253.ico" />
   </ItemGroup>
   <ItemGroup />
