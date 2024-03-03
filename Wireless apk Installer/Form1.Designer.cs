@@ -30,7 +30,6 @@ namespace bulk_apk_installer
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.textBoxIP = new System.Windows.Forms.TextBox();
@@ -40,17 +39,8 @@ namespace bulk_apk_installer
             this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxPort = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.materialMultiLineTextBox2 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.SuspendLayout();
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(372, 114);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(121, 97);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // button3
             // 
@@ -59,10 +49,9 @@ namespace bulk_apk_installer
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(20, 211);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(12, 148);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(124, 59);
+            this.button3.Size = new System.Drawing.Size(93, 48);
             this.button3.TabIndex = 3;
             this.button3.Text = "Connect Device";
             this.button3.UseVisualStyleBackColor = false;
@@ -75,10 +64,9 @@ namespace bulk_apk_installer
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(180, 211);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(128, 148);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(124, 59);
+            this.button4.Size = new System.Drawing.Size(93, 48);
             this.button4.TabIndex = 4;
             this.button4.Text = "Disconnect Device";
             this.button4.UseVisualStyleBackColor = false;
@@ -86,18 +74,20 @@ namespace bulk_apk_installer
             // 
             // textBoxIP
             // 
-            this.textBoxIP.Location = new System.Drawing.Point(37, 126);
+            this.textBoxIP.Location = new System.Drawing.Point(28, 102);
+            this.textBoxIP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxIP.Name = "textBoxIP";
-            this.textBoxIP.Size = new System.Drawing.Size(154, 22);
+            this.textBoxIP.Size = new System.Drawing.Size(116, 20);
             this.textBoxIP.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.label1.Location = new System.Drawing.Point(12, 129);
+            this.label1.Location = new System.Drawing.Point(9, 105);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(19, 16);
+            this.label1.Size = new System.Drawing.Size(17, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "IP";
             // 
@@ -105,11 +95,12 @@ namespace bulk_apk_installer
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.label2.Location = new System.Drawing.Point(369, 82);
+            this.label2.Location = new System.Drawing.Point(304, 89);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 16);
+            this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Connected Devices";
+            this.label2.Text = "Connected Device";
             // 
             // button1
             // 
@@ -118,10 +109,9 @@ namespace bulk_apk_installer
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(20, 309);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(106, 251);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 59);
+            this.button1.Size = new System.Drawing.Size(128, 48);
             this.button1.TabIndex = 10;
             this.button1.Text = "Install Nice Apk";
             this.button1.UseVisualStyleBackColor = false;
@@ -135,11 +125,12 @@ namespace bulk_apk_installer
             this.materialMultiLineTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialMultiLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialMultiLineTextBox1.Hint = "";
-            this.materialMultiLineTextBox1.Location = new System.Drawing.Point(20, 387);
+            this.materialMultiLineTextBox1.Location = new System.Drawing.Point(15, 314);
+            this.materialMultiLineTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
             this.materialMultiLineTextBox1.ReadOnly = true;
-            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(473, 332);
+            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(355, 270);
             this.materialMultiLineTextBox1.TabIndex = 11;
             this.materialMultiLineTextBox1.Text = "";
             // 
@@ -147,37 +138,46 @@ namespace bulk_apk_installer
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.label3.Location = new System.Drawing.Point(208, 129);
+            this.label3.Location = new System.Drawing.Point(156, 105);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 16);
+            this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "Port";
             // 
             // textBoxPort
             // 
             this.textBoxPort.AcceptsTab = true;
-            this.textBoxPort.Location = new System.Drawing.Point(258, 126);
+            this.textBoxPort.Location = new System.Drawing.Point(194, 102);
+            this.textBoxPort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxPort.Name = "textBoxPort";
-            this.textBoxPort.Size = new System.Drawing.Size(59, 22);
+            this.textBoxPort.Size = new System.Drawing.Size(45, 20);
             this.textBoxPort.TabIndex = 2;
             // 
-            // checkBox1
+            // materialMultiLineTextBox2
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(372, 293);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(95, 20);
-            this.checkBox1.TabIndex = 13;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.materialMultiLineTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialMultiLineTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialMultiLineTextBox2.Depth = 0;
+            this.materialMultiLineTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialMultiLineTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialMultiLineTextBox2.Hint = "";
+            this.materialMultiLineTextBox2.Location = new System.Drawing.Point(289, 115);
+            this.materialMultiLineTextBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.materialMultiLineTextBox2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialMultiLineTextBox2.Name = "materialMultiLineTextBox2";
+            this.materialMultiLineTextBox2.ReadOnly = true;
+            this.materialMultiLineTextBox2.Size = new System.Drawing.Size(192, 127);
+            this.materialMultiLineTextBox2.TabIndex = 13;
+            this.materialMultiLineTextBox2.Text = "";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(505, 731);
-            this.Controls.Add(this.checkBox1);
+            this.ClientSize = new System.Drawing.Size(561, 594);
+            this.Controls.Add(this.materialMultiLineTextBox2);
             this.Controls.Add(this.textBoxPort);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.materialMultiLineTextBox1);
@@ -187,12 +187,11 @@ namespace bulk_apk_installer
             this.Controls.Add(this.textBoxIP);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.listView1);
             this.ForeColor = System.Drawing.Color.White;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(2000, 2338);
-            this.MinimumSize = new System.Drawing.Size(348, 80);
+            this.MaximumSize = new System.Drawing.Size(1500, 1900);
+            this.MinimumSize = new System.Drawing.Size(261, 65);
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Sizable = false;
@@ -206,8 +205,6 @@ namespace bulk_apk_installer
         }
 
         #endregion
-
-        private ListView listView1;
         private Button button3;
         private Button button4;
         private TextBox textBoxIP;
@@ -217,7 +214,7 @@ namespace bulk_apk_installer
         private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
         private Label label3;
         private TextBox textBoxPort;
-        private CheckBox checkBox1;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox2;
     }
 }
 

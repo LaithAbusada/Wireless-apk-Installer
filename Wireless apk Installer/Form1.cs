@@ -81,7 +81,7 @@ namespace bulk_apk_installer
                 RedirectStandardError = true,
                 RedirectStandardInput = true,
                 UseShellExecute = false,
-                CreateNoWindow = true,
+                CreateNoWindow =true,
 
             };
 
@@ -104,6 +104,7 @@ namespace bulk_apk_installer
                 {
                     BeginInvoke(new MethodInvoker(() =>
                     {
+                        Console.WriteLine(evt.Data);
                         materialMultiLineTextBox1.AppendText(evt.Data + Environment.NewLine);
                         materialMultiLineTextBox1.ScrollToCaret();
                     }));
@@ -116,6 +117,7 @@ namespace bulk_apk_installer
                 {
                     BeginInvoke(new Action(() =>
                     {
+                        Console.WriteLine(evt.Data);
                         //rtbStdErr.AppendText(evt.Data + Environment.NewLine);
                         //rtbStdErr.ScrollToCaret();
                     }));
@@ -209,7 +211,7 @@ namespace bulk_apk_installer
             }
 
             // Add a delay to allow time for the connection process
-            await Task.Delay(5000);
+            await Task.Delay(10000);
 
             // Now check if the connection was successful by searching for the confirmation message
             string[] lines = materialMultiLineTextBox1.Lines;
@@ -228,8 +230,8 @@ namespace bulk_apk_installer
 
             if (wordFound)
             {
-                MessageBox.Show("Device connected successfully");
-                listView1.Items.Add(ipAddress + ':' + port);
+                string ipPort = ipAddress + ':' + port;
+                materialMultiLineTextBox2.AppendText(ipPort + Environment.NewLine);
             }
             else
             {
@@ -258,41 +260,56 @@ namespace bulk_apk_installer
                 MessageBox.Show(ex.Message);
             }
             MessageBox.Show("Device disconnected successfully");
-            listView1.Items.Clear();
+            materialMultiLineTextBox2.Text = string.Empty;
             cmdProcess.CloseMainWindow();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
 
+            Console.WriteLine(Application.StartupPath);
             string websiteUrl = "https://innovo.net/repo/TP4/nice-latest.apk";
-            string downloadPath = "E:\\Wireless apk Installer\\Wireless apk Installer\\Downloads";
-            listView1.Items.Add("1.1.1.1:5555");
+            string solutionDirectory = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName;
+
+            // Combine solution directory with "Downloads" folder
+            string downloadDirectory = Path.Combine(solutionDirectory, "Downloads","Nice-apks");
 
             try
             {
-                HttpDownloader httpDownloader;
-                httpDownloader = new HttpDownloader(websiteUrl,$"{Application.StartupPath}\\{Path.GetFileName("nice-latest.apk")}");
+                HttpDownloader httpDownloader = new HttpDownloader(websiteUrl, $"{downloadDirectory}\\{Path.GetFileName("nice-latest.apk")}");
                 httpDownloader.Start();
-
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error downloading file: {ex.Message}");
             }
 
-            if (listView1.Items.Count == 0)
+            if (materialMultiLineTextBox2.Text == string.Empty)
             {
                 MessageBox.Show("No Device has connected to this PC, Please connect the device and press the refresh button", "Error..", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-
-
             {
-                string path = "";
-                string installcom = $"for %%f in ({path}) do adb install -g -r -d %%f";
+
+                +
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+                    10--
+            }
+            {
+                string installcom = $@"for %f in ({downloadDirectory}\*.apk) do adb install -g -r -d ""%f""";
                 StartCmdProcess();
 
                 try
@@ -300,22 +317,18 @@ namespace bulk_apk_installer
                     stdin.Write("\u0040echo off" + Environment.NewLine);
                     stdin.Write("---------------------------------------------------------------" + Environment.NewLine + "-- Wait a minute the installation started --" + Environment.NewLine + "---------------------------------------------------------------" + Environment.NewLine);
                     stdin.Write(installcom + Environment.NewLine);
-
                 }
                 catch
                 {
-
+                    // Handle exception
                 }
                 finally
                 {
                     cmdProcess.CloseMainWindow();
                 }
-
-
-
             }
-        }
 
- 
+
+        }
+        }
     }
-}
