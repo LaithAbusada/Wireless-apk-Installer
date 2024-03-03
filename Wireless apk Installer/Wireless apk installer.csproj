@@ -110,11 +110,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Downloads\adb.exe" />
     <Content Include="ext_apk_filetype_icon_176253.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Downloads\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

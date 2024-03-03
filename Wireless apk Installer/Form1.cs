@@ -35,8 +35,24 @@ namespace bulk_apk_installer
 
         public void installadb()
         {
-            AdbServer server = new AdbServer();
-            var result = server.StartServer("adb.exe", restartServerIfNewer: false);
+
+            string solutionDirectory = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.FullName;
+
+            // Combine solution directory with "Downloads" folder and adb.exe
+            string adbPath = Path.Combine(solutionDirectory, "Downloads", "adb.exe");
+
+            Console.WriteLine(adbPath);
+            if (File.Exists(adbPath))
+            {
+                AdbServer server = new AdbServer();
+                var result = server.StartServer(adbPath, restartServerIfNewer: false);
+                Console.WriteLine("Adb file exists, and success");
+                
+            }
+            else
+            {
+                Console.WriteLine("ADB executable not found. Please make sure it is located in the 'Downloads' folder within your solution directory.");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
